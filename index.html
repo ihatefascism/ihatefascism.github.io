@@ -3,211 +3,171 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rohan Singh | Computer Engineering Student & Builder</title>
-<meta name="description" content="Portfolio of Rohan Singh, B.Tech Computer Engineering student at NMIMS Navi Mumbai. ESP32 drone, Python, C++, Java, Linux.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+<title>Rohan Singh | Computer Engineering Student</title>
+<meta name="description" content="Rohan Singh, third-year B.Tech Computer Engineering student at NMIMS Navi Mumbai. Python, C++, Java, Assembly, Linux, embedded systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%238b3dff'/><text x='50' y='68' font-size='52' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>RS</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --black:#07040d; --ink:#120a1f; --card:#1a1030;
-  --pink:#ff3d9a; --hot:#ff7ac3; --purple:#8b3dff; --lilac:#c9a6ff;
-  --text:#f6edff; --muted:#b9a8d6;
+  --bg:#09050f; --panel:#130b20; --line:#2b1c45;
+  --pink:#f0509e; --purple:#9a5cff; --text:#f1eaff; --muted:#a899c4;
   --grad:linear-gradient(120deg,var(--pink),var(--purple));
-  --display:'Unbounded','Trebuchet MS',sans-serif;
-  --body:'Outfit','Segoe UI',system-ui,sans-serif;
+  --head:'Sora','Segoe UI',sans-serif; --body:'Inter','Segoe UI',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--body);font-size:1.08rem;line-height:1.65;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.02rem;line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(40rem 28rem at 8% -5%,rgba(240,80,158,.22),transparent 70%),radial-gradient(38rem 30rem at 100% 15%,rgba(154,92,255,.2),transparent 70%)}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--hot);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
 
-/* floating aurora behind everything */
-.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(circle at 50% 0%,#1c0b33,var(--black) 65%)}
-.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
-.aurora i:nth-child(1){width:46vmax;height:46vmax;background:var(--pink);top:-12vmax;left:-10vmax}
-.aurora i:nth-child(2){width:42vmax;height:42vmax;background:var(--purple);bottom:-14vmax;right:-8vmax;animation-delay:-6s}
-.aurora i:nth-child(3){width:26vmax;height:26vmax;background:#c026d3;top:40%;left:45%;opacity:.3;animation-delay:-11s}
-@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+nav{position:sticky;top:0;z-index:10;background:rgba(9,5,15,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{max-width:1000px;margin:0 auto;padding:.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.bar b{font-family:var(--head);font-weight:700}
+.bar ul{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
+.bar a{text-decoration:none;color:var(--muted);font-size:.93rem;font-weight:500}
+.bar a:hover{color:var(--text)}
 
-nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem clamp(1rem,5vw,3rem);background:rgba(7,4,13,.7);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,61,154,.25)}
-nav b{font-family:var(--display);font-size:1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav ul{display:flex;gap:1.3rem;list-style:none;flex-wrap:wrap}
-nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
-nav a:hover{color:var(--hot)}
+main{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+section{padding:4.5rem 0 0}
+h2{font-family:var(--head);font-size:1.5rem;font-weight:600;margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem}
+h2::before{content:"";width:6px;height:1.4rem;border-radius:3px;background:var(--grad)}
 
-main{max-width:1040px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem)}
-section{padding:5rem 0 1rem}
-h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:2rem;line-height:1.2}
-h2::after{content:"";display:block;width:84px;height:6px;border-radius:6px;background:var(--grad);margin-top:.9rem;box-shadow:0 0 18px var(--pink)}
+.hero{padding-top:6rem}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:.8rem}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .title{font-family:var(--head);font-size:1.2rem;color:var(--pink);font-weight:500;margin-bottom:1.2rem}
+.hero p.lead{max-width:60ch;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.btn{padding:.7rem 1.4rem;border-radius:10px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--line);background:var(--panel);transition:border-color .2s}
+.btn:hover{border-color:var(--pink)}
+.btn.fill{background:var(--grad);border-color:transparent;color:#fff}
+.btn.fill:hover{opacity:.9}
 
-/* hero: the memorable moment */
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding-top:3rem}
-.hero p.hi{color:var(--hot);font-weight:500;font-size:1.2rem}
-.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(3rem,13vw,8.5rem);line-height:.95;letter-spacing:-.03em;margin:.6rem 0 1.4rem;
-  background:linear-gradient(100deg,var(--hot),var(--pink) 30%,var(--purple) 60%,var(--lilac) 85%,var(--hot));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;filter:drop-shadow(0 0 28px rgba(255,61,154,.45))}
-@keyframes shine{to{background-position:-250% 0}}
-.hero .role{font-size:clamp(1.15rem,2.6vw,1.6rem);max-width:30ch;color:var(--text)}
-.hero .role em{font-style:normal;color:var(--hot);font-weight:600}
-.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.btn{display:inline-block;padding:.85rem 1.7rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--pink);transition:transform .2s,box-shadow .2s}
-.btn.fill{background:var(--grad);border-color:transparent;box-shadow:0 0 28px rgba(255,61,154,.5)}
-.btn.line{background:rgba(255,61,154,.08)}
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 34px rgba(139,61,255,.7)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
+.fact{padding:1.1rem 1.3rem;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.fact small{display:block;color:var(--muted);font-size:.85rem}
+.fact b{font-family:var(--head);font-weight:600;font-size:1rem}
 
-.about{font-size:1.25rem;max-width:62ch}
-.about strong{color:var(--hot);font-weight:600}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2.4rem}
-.stat{padding:1.3rem;border-radius:22px;background:var(--card);border:1px solid rgba(139,61,255,.45)}
-.stat b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--pink)}
-.stat span{color:var(--muted);font-size:.95rem}
+.about p{max-width:70ch;color:#ddd1f3}
+.about p+p{margin-top:1rem}
 
-/* timeline */
-.tl{position:relative;padding-left:2rem;border-left:3px solid transparent;border-image:linear-gradient(var(--pink),var(--purple)) 1}
-.tl article{position:relative;padding:1.6rem;margin-bottom:1.6rem;border-radius:22px;background:var(--card);border:1px solid rgba(255,61,154,.35)}
-.tl article::before{content:"";position:absolute;left:calc(-2rem - 10px);top:2rem;width:17px;height:17px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px var(--black),0 0 16px var(--pink)}
-.tl h3{font-family:var(--display);font-size:1.1rem;font-weight:500}
-.tl .meta{color:var(--hot);font-weight:500;margin:.3rem 0 .9rem}
-.tl ul{padding-left:1.2rem;color:var(--text)}
-.tl li{margin-bottom:.4rem}
-.tl li::marker{color:var(--pink)}
+.proj{padding:1.8rem;border:1px solid var(--line);border-radius:16px;background:var(--panel);border-left:4px solid var(--pink)}
+.proj h3{font-family:var(--head);font-size:1.2rem;font-weight:600}
+.proj .st{display:inline-block;margin:.5rem 0 1rem;padding:.15rem .7rem;border-radius:999px;font-size:.8rem;font-weight:600;background:rgba(240,80,158,.15);color:var(--pink);border:1px solid rgba(240,80,158,.4)}
+.proj ul{padding-left:1.2rem;color:#ddd1f3}
+.proj li{margin-bottom:.4rem}
+.proj li::marker{color:var(--purple)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.tag{padding:.25rem .8rem;border-radius:8px;font-size:.85rem;background:rgba(154,92,255,.14);border:1px solid rgba(154,92,255,.4)}
 
-/* skills */
-.chips{display:flex;flex-wrap:wrap;gap:.7rem}
-.chip{padding:.55rem 1.2rem;border-radius:999px;font-weight:500;border:1.5px solid var(--purple);background:rgba(139,61,255,.14)}
-.chip.p{border-color:var(--pink);background:rgba(255,61,154,.14)}
-.skillgroup{margin-bottom:1.8rem}
-.skillgroup h3{font-size:1.05rem;color:var(--lilac);font-weight:500;margin-bottom:.8rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.sk{padding:1.4rem;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.sk h3{font-family:var(--head);font-size:.98rem;font-weight:600;margin-bottom:.9rem;color:var(--purple)}
+.sk .tags{margin-top:0}
 
-/* cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem}
-.card{padding:1.7rem;border-radius:26px;background:linear-gradient(160deg,#241342,var(--card));border:1px solid rgba(255,61,154,.4);transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(139,61,255,.4)}
-.card h3{font-family:var(--display);font-size:1.05rem;font-weight:500;margin-bottom:.7rem}
-.card .tag{display:inline-block;margin-bottom:.9rem;padding:.2rem .8rem;border-radius:999px;background:var(--grad);font-size:.85rem;font-weight:600}
-.card p{color:var(--muted)}
+.row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.5rem;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.row+.row{margin-top:1rem}
+.row h3{font-family:var(--head);font-size:1.05rem;font-weight:600}
+.row p{color:var(--muted)}
+.row .when{color:var(--pink);font-weight:500;font-size:.95rem}
 
-.contact{text-align:center;padding:5rem 1rem;margin:5rem 0 3rem;border-radius:36px;background:linear-gradient(135deg,rgba(255,61,154,.28),rgba(139,61,255,.3));border:1px solid rgba(255,122,195,.5);box-shadow:0 0 60px rgba(139,61,255,.3)}
-.contact h2{font-size:clamp(1.8rem,5vw,3rem)}
-.contact h2::after{margin:.9rem auto 0}
-.contact p{max-width:46ch;margin:0 auto 2rem;color:var(--text)}
+.contact{padding:2.6rem 2rem;border-radius:20px;text-align:center;border:1px solid var(--line);background:linear-gradient(135deg,rgba(240,80,158,.14),rgba(154,92,255,.16))}
+.contact h2{justify-content:center}
+.contact p{color:var(--muted);max-width:48ch;margin:0 auto}
 .contact .btns{justify-content:center}
-footer{text-align:center;color:var(--muted);padding:0 1rem 3rem;font-size:.95rem}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:3rem 1rem}
 
-@media (max-width:640px){nav ul{gap:.8rem}nav a{font-size:.85rem}.tl{padding-left:1.4rem}.tl article::before{left:calc(-1.4rem - 10px)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:620px){.bar ul{gap:.9rem}.bar a{font-size:.85rem}.hero{padding-top:4rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-
-<nav>
-  <b>RS</b>
+<nav><div class="bar">
+  <b>Rohan Singh</b>
   <ul>
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-</nav>
+</div></nav>
 
 <main>
   <header class="hero">
-    <p class="hi">Hi, I'm</p>
-    <h1>Rohan Singh</h1>
-    <p class="role">Computer Engineering student at NMIMS, building <em>drones</em>, learning <em>Linux</em> and teaching kids.</p>
+    <h1>Hi, I'm <span>Rohan Singh</span></h1>
+    <p class="title">Computer Engineering student · Embedded systems & software</p>
+    <p class="lead">Third-year B.Tech student at NMIMS Navi Mumbai. I build software that talks to hardware, and I'm looking for internship opportunities in software and embedded development.</p>
     <div class="btns">
-      <a class="btn fill" href="#achievements">See my work</a>
-      <a class="btn line" href="#contact">Get in touch</a>
+      <a class="btn fill" href="mailto:stopclickingrohan@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/ihatefascism" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/rohan6ingh" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><small>Studying</small><b>B.Tech Computer Engineering</b></div>
+      <div class="fact"><small>University</small><b>NMIMS, Navi Mumbai</b></div>
+      <div class="fact"><small>Languages</small><b>Python, C++, Java, Assembly</b></div>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About me</h2>
-    <p class="about">I'm a B.Tech Computer Engineering student at <strong>NMIMS Navi Mumbai</strong>. I write code in <strong>Python, C++, Java and Assembly</strong>, and I like projects where software meets real hardware. Right now I'm designing and coding a functional <strong>drone prototype on an ESP32</strong>, focused on real-time data processing in a Linux environment.</p>
-    <div class="stats">
-      <div class="stat"><b>4</b><span>Programming languages</span></div>
-      <div class="stat"><b>ESP32</b><span>Drone prototype in progress</span></div>
-      <div class="stat"><b>3 months</b><span>Volunteer teaching</span></div>
-    </div>
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I'm a Computer Engineering student with hands-on experience writing code in Python, C++, Java and Assembly. I enjoy low-level and real-time work, where understanding how the machine actually runs the code makes a difference.</p>
+    <p>My current focus is a functional drone prototype built on an ESP32, where I handle both the design and the code, with an emphasis on real-time data processing in a Linux environment.</p>
   </section>
 
-  <section id="experience">
-    <h2>Experience & education</h2>
-    <div class="tl">
-      <article>
-        <h3>Volunteer, Paathshala NGO</h3>
-        <p class="meta">May 2025 to July 2025 (3 months) · Jaipur, Rajasthan</p>
-        <ul>
-          <li>Taught academic subjects to children up to the 10th grade.</li>
-          <li>Prepared and served daily lunch (and occasional dinner) for the students on the NGO premises.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>B.Tech, Computer Engineering</h3>
-        <p class="meta">Narsee Monjee Institute of Management Studies (NMIMS), Navi Mumbai · Since July 2024</p>
-        <ul>
-          <li>Hands-on development in Python, C++, Java and Assembly.</li>
-          <li>Building an ESP32 drone prototype alongside coursework.</li>
-        </ul>
-      </article>
-    </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <article class="proj">
+      <h3>ESP32 Drone Prototype</h3>
+      <span class="st">In progress</span>
+      <ul>
+        <li>Designing and coding a functional drone prototype around the ESP32 microcontroller.</li>
+        <li>Focused on real-time data processing.</li>
+        <li>Developed and tested in a Linux environment.</li>
+      </ul>
+      <div class="tags"><span class="tag">ESP32</span><span class="tag">Embedded</span><span class="tag">Real-time processing</span><span class="tag">Linux</span></div>
+    </article>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skillgroup">
-      <h3>Programming</h3>
-      <div class="chips"><span class="chip p">Python</span><span class="chip p">C++</span><span class="chip p">Java</span><span class="chip p">Assembly</span></div>
-    </div>
-    <div class="skillgroup">
-      <h3>Tools & platforms</h3>
-      <div class="chips"><span class="chip">Linux</span><span class="chip">ESP32</span><span class="chip">Figma</span><span class="chip">AI-Assisted Programming</span></div>
-    </div>
-    <div class="skillgroup">
-      <h3>Beyond code</h3>
-      <div class="chips"><span class="chip p">Voluntary Sector</span><span class="chip p">Teaching</span></div>
+    <div class="skills">
+      <div class="sk"><h3>Languages</h3><div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Assembly</span></div></div>
+      <div class="sk"><h3>Systems & hardware</h3><div class="tags"><span class="tag">Linux</span><span class="tag">ESP32</span><span class="tag">Embedded development</span></div></div>
+      <div class="sk"><h3>Development practice</h3><div class="tags"><span class="tag">AI-assisted programming</span></div></div>
     </div>
   </section>
 
-  <section id="achievements">
-    <h2>Achievements & projects</h2>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Project</span>
-        <h3>ESP32 Drone Prototype</h3>
-        <p>A functional drone designed and coded from scratch, with real-time data processing running in a Linux environment.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Certification</span>
-        <h3>AI-Assisted Programming</h3>
-        <p>Certified in using AI tools to write, debug and speed up software development.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Service</span>
-        <h3>Paathshala NGO Volunteer</h3>
-        <p>Spent three months in Jaipur teaching students up to Class 10 and helping serve their daily meals.</p>
-      </div>
+  <section id="education">
+    <h2>Education & certifications</h2>
+    <div class="row">
+      <div><h3>B.Tech, Computer Engineering</h3><p>Narsee Monjee Institute of Management Studies (NMIMS), Navi Mumbai</p></div>
+      <span class="when">Started July 2024 · Third year</span>
+    </div>
+    <div class="row">
+      <div><h3>AI-Assisted Programming</h3><p>Certification</p></div>
     </div>
   </section>
 
   <section id="contact">
     <div class="contact">
-      <h2>Let's build something</h2>
-      <p>Open to internships, projects and collaborations. Say hello and I'll get back to you.</p>
+      <h2>Get in touch</h2>
+      <p>I'm open to internships and project collaborations. The best way to reach me is by email.</p>
       <div class="btns">
-        <a class="btn fill" href="mailto:stopclickingrohan@gmail.com">Email me</a>
-        <a class="btn line" href="https://www.linkedin.com/in/rohan6ingh" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn line" href="https://github.com/ihatefascism" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn fill" href="mailto:stopclickingrohan@gmail.com">stopclickingrohan@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/rohan6ingh" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ihatefascism" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer>© <span id="y"></span> Rohan Singh. Made with love and a lot of pink.</footer>
+<footer>© <span id="y"></span> Rohan Singh</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
